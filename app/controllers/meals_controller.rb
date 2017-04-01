@@ -18,7 +18,7 @@ class MealsController < ApplicationController
       ingredients_array = []
       # ingredient_params[:ingredient].each_with_index do |ingred_params, index|
       #   Ingredient.new(ingred_params)
-      end
+      # end
     else
       @errors = @meal.errors.full_messages
       render 'new'

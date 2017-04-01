@@ -3,5 +3,9 @@ Rails.application.routes.draw do
 
   root "meals#index"
   resources :meals
+  resources :users, only: [:new, :create, :show]
+  resources :sessions, only: [:create]
+  get '/login', to: 'sessions#new', as: :login
+  get '/logout', to: 'sessions#destroy', as: :logout
 
 end

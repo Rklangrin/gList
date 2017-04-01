@@ -1,1 +1,19 @@
-<h1> Hello World</h1>
+<div>
+  <h2>Meals</h2>
+  
+  <% @meals.each do |meal| %>
+    <h4> <%= meal.name %> </h4>
+      <ul>
+      <% meal.ingredients_array.each do |ingredient| %>
+        <li><%= ingredient[:name] %></li>
+        <ul>
+          <li>
+            <%= "#{ingredient[:quantity]} #{ingredient[:unit]}" %>
+          </li>
+        </ul>
+      <% end %>
+      </ul>
+  <% end %>
+
+  
+</div>

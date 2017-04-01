@@ -4,6 +4,7 @@ class CreateMealItems < ActiveRecord::Migration[5.0]
       t.integer :ingredient_id, null: false
       t.integer :meal_id, null: false
       t.integer :quantity, null: false
+      t.string :instruction
 
       t.timestamps
     end

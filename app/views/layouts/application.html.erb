@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <h1>gList</h1>
+        <div>
+          <%= link_to "Login", login_path %>
+          <%= link_to "Sign Up!", new_user_path %>
+          <%= link_to "Logout", logout_path %>
+        </div>
+      </nav>
+    </header>
+
     <%= yield %>
   </body>
 </html>

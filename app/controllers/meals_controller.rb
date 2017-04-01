@@ -13,8 +13,16 @@ class MealsController < ApplicationController
   end
 
   def create
-
-    binding.pry
+    @meal = Meal.new(meal_params)
+    if @meal.save
+      ingredients_array = []
+      # ingredient_params[:ingredient].each_with_index do |ingred_params, index|
+      #   Ingredient.new(ingred_params)
+      end
+    else
+      @errors = @meal.errors.full_messages
+      render 'new'
+    end
   end
 
   def new_ingredient
@@ -22,5 +30,19 @@ class MealsController < ApplicationController
       format.js {}
       format.html { redirect_to :back }
     end 
+  end
+
+  private
+
+  def meal_params
+    params.require(:meal).permit(:user_id, :name)
+  end
+
+  def ingredient_params
+    params.require(:ingredient).permit(:ingredient => [:name, :unit_type])
+  end
+
+  def meal_item_params
+    params.require(:meal_item).permit(:meal_item => [:quantity, :instruction])
   end
 end

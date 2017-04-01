@@ -1,5 +1,8 @@
 <div>
   <h2>Meals</h2>
+
+  
+  <%= link_to "Create New Meal", new_meal_path %>
   
   <% @meals.each do |meal| %>
     <h4> <%= meal.name %> </h4>

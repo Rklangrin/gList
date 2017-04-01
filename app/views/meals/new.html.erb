@@ -4,11 +4,44 @@
   <div>
     <%= form_for @meal do |f| %>
       <p>
-        <%= f.label :name %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+      </p>
+      <p>
+        <%= f.label :Meal_name %>
         <%= f.text_field :name %>
       </p>
 
-      
+      <div>
+        <%= fields_for :ingredient do |ingredient_f| %>   
+
+          <p>
+            <%= ingredient_f.label :Ingredient_name %>
+            <%= ingredient_f.text_field :name %>
+          </p>
+
+          <p>
+            <%= ingredient_f.label :unit_type %>
+            <%= ingredient_f.text_field :unit_type %>
+          </p>
+        <% end %>
+      </div>
+
+      <div>
+        <%= fields_for :meal_item do |meal_item_f| %>   
+
+          <p>
+            <%= meal_item_f.label :quantity %>
+            <%= meal_item_f.text_field :quantity %>
+          </p>
+
+          <p>
+            <%= meal_item_f.label :instruction %>
+            <%= meal_item_f.text_field :instruction %>
+          </p>
+        <% end %>
+
+      </div>
+
 
         <%= f.submit "create meal" %>
     <% end %>

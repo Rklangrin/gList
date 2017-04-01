@@ -11,4 +11,9 @@ class MealsController < ApplicationController
     end
     @meal = Meal.new
   end
+
+  def create
+
+    binding.pry
+  end
 end

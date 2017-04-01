@@ -16,4 +16,11 @@ class MealsController < ApplicationController
 
     binding.pry
   end
+
+  def new_ingredient
+    respond_to do |format|
+      format.js {}
+      format.html { redirect_to :back }
+    end 
+  end
 end

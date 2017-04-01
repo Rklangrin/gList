@@ -1,0 +1,22 @@
+<%= fields_for :ingredient do |ingredient_f| %>   
+  <p>
+    <%= ingredient_f.label :Ingredient_name %>
+    <%= ingredient_f.text_field "ingredient[][name]" %>
+  </p>
+  <p>
+    <%= ingredient_f.label :unit_type %>
+    <%= ingredient_f.text_field "ingredient[][unit_type]" %>
+  </p>
+<% end %>
+
+
+<%= fields_for :meal_item do |meal_item_f| %>   
+  <p>
+    <%= meal_item_f.label :quantity %>
+    <%= meal_item_f.text_field "meal_item[][quantity]" %>
+  </p>
+  <p>
+    <%= meal_item_f.label :instruction %>
+    <%= meal_item_f.text_field "meal_item[][instruction]" %>
+  </p>
+<% end %>

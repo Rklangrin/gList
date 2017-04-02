@@ -1,6 +1,6 @@
 # gList (work in progress)
 
-I began thinking about this application during my time at Dev Bootcamp. Everyone I spoke with stressed this: "find a problem that needs solving then solve it." Well my very annoying problem is going to the grocery store and getting groceries for the week. I will write up a list if I'm feeling like a go-getter, then I'll likely forget the list in the car and decide to improvise in the store. But, whether I bring the list in or not, the items I buy are usually pretty general items that don't connect in any specific way. I bought them because a thought in my mind told me I could make something with that.
+I began thinking about this application during my time at Dev Bootcamp. Everyone I spoke with stressed this: "find a problem that needs solving then solve it." Well my very annoying problem is going to the grocery store and getting groceries for the week. I will write up a list if I'm feeling like a go-getter, then I'll likely forget the list in the car and decide to improvise in the store. But, whether I bring the list in or not, the items I buy are usually general items that don't connect in any specific way. I bought them because a thought in my mind told me I could make something with that.
 
 Well, the week starts fine because I usually am good enough to think of at least one or two meals I plan on making. After those two meals, though, I'm left with random items that I'll Macgiver together to make some unconventional dish, or those items will sit in my fridge or pantry until they expire.
 

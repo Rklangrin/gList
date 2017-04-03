@@ -14,11 +14,20 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
+    num_ingredients = params[:ingredient_quantity]
+    @ingredients = []
+
     if @meal.save
-      ingredients_array = []
-      # ingredient_params[:ingredient].each_with_index do |ingred_params, index|
-      #   Ingredient.new(ingred_params)
-      # end
+      respond_to do |format|
+
+        num_ingredients.times do 
+          @ingredients << [Ingredient.new, MealItem.new]
+        end
+
+        # format.html {}
+        format.js {}
+      end
+      
     else
       @errors = @meal.errors.full_messages
       render 'new'
@@ -26,10 +35,7 @@ class MealsController < ApplicationController
   end
 
   def new_ingredient
-    respond_to do |format|
-      format.js {}
-      format.html { redirect_to :back }
-    end 
+    
   end
 
   private

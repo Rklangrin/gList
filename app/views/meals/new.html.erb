@@ -1,8 +1,8 @@
 <div>
   <h2>New Meal</h2>
 
-  <div>
-    <%= form_for @meal do |f| %>
+  <div id="meal-form">
+    <%= form_for @meal, remote: true do |f| %>
       <p>
         <%= f.hidden_field :user_id, value: current_user.id %>
       </p>
@@ -10,15 +10,12 @@
         <%= f.label :Meal_name %>
         <%= f.text_field :name %>
       </p>
-
-      <div class="ingredients">
-        <%= render 'ingredient_form' %>
-      </div>
-
+      <p>
+        <%= label_tag "how many ingredients will this meal have?" %>
+        <%= text_field_tag :ingredient_quantity %>
+      </p>
 
         <%= f.submit "create meal" %>
     <% end %>
   </div>
-
-  <%= button_to "New Ingredient", new_ingredient_path, remote:true  %>
 </div>

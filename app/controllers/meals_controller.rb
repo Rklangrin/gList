@@ -14,28 +14,36 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
-    num_ingredients = params[:ingredient_quantity]
+    num_ingredients = params[:ingredient_quantity].to_i
     @ingredients = []
 
     if @meal.save
       respond_to do |format|
-
         num_ingredients.times do 
           @ingredients << [Ingredient.new, MealItem.new]
         end
-
         # format.html {}
         format.js {}
       end
-      
     else
       @errors = @meal.errors.full_messages
       render 'new'
     end
   end
 
-  def new_ingredient
+  def show
+    @meal = Meal.find_by(id: params[:id])
     
+  end
+
+  def create_new_ingredients
+    params[:ingredients].each_with_index do |nested_params, index|
+      temp = Ingredient.create(ingredient_params(nested_params))
+      temp.meal_items.create(meal_item_params(params[:meal_items][index]))
+      #  FIX THIS. 
+    end
+
+    redirect_to meal_path(params[:meal_items][0][:meal_id])
   end
 
   private
@@ -44,11 +52,11 @@ class MealsController < ApplicationController
     params.require(:meal).permit(:user_id, :name)
   end
 
-  def ingredient_params
-    params.require(:ingredient).permit(:ingredient => [:name, :unit_type])
+  def ingredient_params(ingred_params)
+    ingred_params.permit(:name, :unit_type)
   end
 
-  def meal_item_params
-    params.require(:meal_item).permit(:meal_item => [:quantity, :instruction])
+  def meal_item_params(meal_item_params)
+    meal_item_params.permit(:quantity, :instruction, :meal_id)
   end
 end

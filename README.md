@@ -6,6 +6,8 @@ Well, the week starts fine because I usually am good enough to think of at least
 
 Well this app is going to solve that problem. If you see a meal, hear about a meal, or think of some meal you'd like to make, input it into the app for safe-keepings. When it comes time to go to the grocery store, click a few meals you have in your app and input how many times you plan on making that meal. The app will then generate a grocery list that has all the items you need to make those meals, in the right quantities. That way, you'll never be left with orphan items again. Get exactly what you need every time.
 
+P.S. This is a pet project meant for my own learning. There is already a pretty functional program, brilliantly named  groceryListGenerator (GLG) in the iOS app store that works pretty well to solve this problem. Use that for now, but be on the lookout for my app to one day tower over that one.
+
 * Ruby version: 2.3.3
 
 * System dependencies:

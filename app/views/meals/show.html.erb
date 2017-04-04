@@ -1,0 +1,12 @@
+<h2><%= @meal.name.capitalize %></h2>
+
+<% @meal.ingredients_array.each do |ingredient| %>
+  <ul>
+    <li><%= ingredient[:name] %></li>
+    <ul>
+      <li>
+        <%= "#{ingredient[:quantity]} #{ingredient[:unit]}" %>
+      </li>
+    </ul>
+  </ul>
+<% end %>

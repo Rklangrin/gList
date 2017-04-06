@@ -3,7 +3,17 @@
 
   <div>
     <%= form_for @list do |f| %>
-    
+      <p>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+      </p>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+
+      <%= f.submit "Create list" %>
+
+      <!-- ADD SELECT FIELDS TO ADD FUNCTIONALITY TO ADD MEALS TO A LIST -->
     <% end %>
     
 

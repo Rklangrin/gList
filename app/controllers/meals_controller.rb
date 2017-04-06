@@ -16,13 +16,12 @@ class MealsController < ApplicationController
     @meal = Meal.new(meal_params)
     num_ingredients = params[:ingredient_quantity].to_i
     @ingredients = []
+    num_ingredients.times do 
+      @ingredients << [Ingredient.new, MealItem.new]
+    end
 
     if @meal.save
       respond_to do |format|
-        num_ingredients.times do 
-          @ingredients << [Ingredient.new, MealItem.new]
-        end
-        # format.html {}
         format.js {}
       end
     else
@@ -33,7 +32,6 @@ class MealsController < ApplicationController
 
   def show
     @meal = Meal.find_by(id: params[:id])
-
   end
 
   def create_new_ingredients

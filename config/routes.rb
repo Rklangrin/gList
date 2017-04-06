@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "meals#index"
   resources :meals
   post '/ingredients', to: 'meals#create_new_ingredients', as: :ingredients
+  resources :lists, only: [:new, :create, :show]
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:create]
   get '/login', to: 'sessions#new', as: :login

@@ -11,6 +11,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
 
     if @list.save
+      @list_meal = ListMeal.new
       @meals = Meal.all
       respond_to do |format|
         format.js {}

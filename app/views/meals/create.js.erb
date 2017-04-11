@@ -1,3 +1,8 @@
-$("#meal-form").remove()
-$("h2").after(" <%= j (render 'ingredient_form') %>")
-$("h2").remove()
+<% if @errors %>
+  $("div.errors").remove()
+  $("h2").after(" <%= j (render '/errors') %> ")
+<% else %>
+  $("#meal-form").remove()
+  $("h2").after(" <%= j (render 'ingredient_form') %>")
+  $("h2").remove()
+<% end %>

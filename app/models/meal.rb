@@ -3,6 +3,7 @@ class Meal < ApplicationRecord
   has_many :meal_items
   has_many :ingredients, through: :meal_items
   # accepts_nested_attributes_for :meal_items
+  validates_presence_of :name
 
   def ingredients_array
     arr = []

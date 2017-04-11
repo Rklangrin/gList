@@ -1,8 +1,8 @@
 <div>
-  <h2>New List</h2>
+  <h2 class="new-list">New List</h2>
 
-  <div>
-    <%= form_for @list do |f| %>
+  <div class="new-list">
+    <%= form_for @list, remote: true do |f| %>
       <p>
         <%= f.hidden_field :user_id, value: current_user.id %>
       </p>

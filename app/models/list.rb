@@ -6,6 +6,8 @@ class List < ApplicationRecord
   has_many :meal_items, through: :meals
   has_many :ingredients, through: :meal_items
 
+  validates_presence_of :name
+
   # def generate
   #   uniq_ingred = self.get_unique_ingredients
   #   quantities_hash = self.get_quantities

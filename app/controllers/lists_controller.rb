@@ -6,4 +6,25 @@ class ListsController < ApplicationController
     end
     @list = List.new
   end
+
+  def create
+    @list = List.new(list_params)
+
+    if @list.save
+      respond_to do |format|
+        format.js {}
+      end
+    else
+      @errors = @list.errors.full_messages
+      respond_to do |format|
+        format.js {}
+      end
+    end
+  end
+
+  private
+
+  def list_params
+    params.require(:list).permit(:name, :user_id)
+  end
 end

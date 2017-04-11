@@ -27,7 +27,7 @@ class MealsController < ApplicationController
     else
       @errors = @meal.errors.full_messages
       respond_to do |format|
-        format.js { }
+        format.js {}
       end
     end
   end

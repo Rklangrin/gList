@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :lists, only: [:new, :create, :show]
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:create]
+  resources :list_meals, only: [:create]
   get '/login', to: 'sessions#new', as: :login
   get '/logout', to: 'sessions#destroy', as: :logout
 

@@ -1,8 +1,17 @@
 <div>
   <h2>Add Meals to the list</h2>
 
-  <div>
-    <%= button_to "Add meal",  %>
-  </div>
+  <% @meals.each_with_index do |meal, index| %>
+    <div class="meals" id="<%= index %>">
+      <h4><%= meal.name %></h4>
+      <%= form_for @list_meal, remote: true do |f| %>
+          <%= f.hidden_field :list_id, value: @list.id %>
+          <%= f.hidden_field :meal_id, value: meal.id %>
+          <%= hidden_field_tag :index, value: index %>
+
+        <%= f.submit "add meal" %>
+      <% end %>
+    </div>
+  <% end %>
 
 </div>

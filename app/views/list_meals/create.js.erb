@@ -1,0 +1,8 @@
+<% if @errors %>
+  $("div.errors").remove()
+  $("h2").after(" <%= j (render '/errors') %> ")
+<% else %>
+  $(".errors").remove()
+  $("h2").after(" <%= j (render 'pick_meals') %>")
+  $(".new-list").remove()
+<% end %>

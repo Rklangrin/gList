@@ -3,11 +3,12 @@ Rails.application.routes.draw do
 
   root "meals#index"
   resources :meals
-  post '/ingredients', to: 'meals#create_new_ingredients', as: :ingredients
+  # post '/ingredients', to: 'meals#create_new_ingredients', as: :ingredients
   resources :lists, only: [:new, :create, :show]
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:create]
   resources :list_meals, only: [:create]
+  resources :ingredients, only: [:new, :create]
   get '/login', to: 'sessions#new', as: :login
   get '/logout', to: 'sessions#destroy', as: :logout
 

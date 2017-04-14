@@ -32,14 +32,14 @@ class MealsController < ApplicationController
     @meal = Meal.find_by(id: params[:id])
   end
 
-  def create_new_ingredients
-    params[:ingredients].each_with_index do |nested_params, index|
-      temp = Ingredient.create(ingredient_params(nested_params))
-      temp.meal_items.create(meal_item_params(params[:meal_items][index]))
-    end
+  # def create_new_ingredients
+  #   params[:ingredients].each_with_index do |nested_params, index|
+  #     temp = Ingredient.create(ingredient_params(nested_params))
+  #     temp.meal_items.create(meal_item_params(params[:meal_items][index]))
+  #   end
 
-    redirect_to meal_path(params[:meal_items][0][:meal_id])
-  end
+  #   redirect_to meal_path(params[:meal_items][0][:meal_id])
+  # end
 
   private
 

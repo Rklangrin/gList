@@ -14,21 +14,17 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
-    num_ingredients = params[:ingredient_quantity].to_i
-    @ingredients = []
-    num_ingredients.times do 
-      @ingredients << [Ingredient.new, MealItem.new]
-    end
+    # num_ingredients = params[:ingredient_quantity].to_i
+    # @ingredients = []
+    # num_ingredients.times do 
+    #   @ingredients << [Ingredient.new, MealItem.new]
+    # end
 
     if @meal.save
-      respond_to do |format|
-        format.js {}
-      end
+      redirect_to 
     else
       @errors = @meal.errors.full_messages
-      respond_to do |format|
-        format.js {}
-      end
+      render 'new'
     end
   end
 

@@ -21,7 +21,7 @@ class MealsController < ApplicationController
     # end
 
     if @meal.save
-      redirect_to 
+      redirect_to new_meal_ingredient_path(@meal)
     else
       @errors = @meal.errors.full_messages
       render 'new'

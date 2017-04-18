@@ -14,21 +14,17 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
-    num_ingredients = params[:ingredient_quantity].to_i
-    @ingredients = []
-    num_ingredients.times do 
-      @ingredients << [Ingredient.new, MealItem.new]
-    end
+    # num_ingredients = params[:ingredient_quantity].to_i
+    # @ingredients = []
+    # num_ingredients.times do 
+    #   @ingredients << [Ingredient.new, MealItem.new]
+    # end
 
     if @meal.save
-      respond_to do |format|
-        format.js {}
-      end
+      redirect_to new_meal_ingredient_path(@meal)
     else
       @errors = @meal.errors.full_messages
-      respond_to do |format|
-        format.js {}
-      end
+      render 'new'
     end
   end
 
@@ -36,14 +32,14 @@ class MealsController < ApplicationController
     @meal = Meal.find_by(id: params[:id])
   end
 
-  def create_new_ingredients
-    params[:ingredients].each_with_index do |nested_params, index|
-      temp = Ingredient.create(ingredient_params(nested_params))
-      temp.meal_items.create(meal_item_params(params[:meal_items][index]))
-    end
+  # def create_new_ingredients
+  #   params[:ingredients].each_with_index do |nested_params, index|
+  #     temp = Ingredient.create(ingredient_params(nested_params))
+  #     temp.meal_items.create(meal_item_params(params[:meal_items][index]))
+  #   end
 
-    redirect_to meal_path(params[:meal_items][0][:meal_id])
-  end
+  #   redirect_to meal_path(params[:meal_items][0][:meal_id])
+  # end
 
   private
 

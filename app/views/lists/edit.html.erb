@@ -1,1 +1,24 @@
 <h2 class="center"> <%= @list.name %> </h2>
+
+<div class="row">
+  <% @meals.each do |meal| %>
+    <div class="col s12 m6 l4">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><%= meal.name %></span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+            <ul>
+              <% meal.ingredients_array.each do |ingredient| %>
+                <li><%= ingredient[:name] %></li>
+                <ul>
+                  <li>
+                    <%= "#{ingredient[:quantity]} #{ingredient[:unit]}" %>
+                  </li>
+                </ul>
+              <% end %>
+            </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

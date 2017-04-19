@@ -1,6 +1,6 @@
 # gList (work in progress)
 
-I began thinking about this application during my time at Dev Bootcamp. Everyone I spoke with stressed this: "find a problem that needs solving then solve it." Well my very annoying problem is going to the grocery store and getting groceries for the week. I will write up a list if I'm feeling like a go-getter, then I'll likely forget the list in the car and decide to improvise in the store. But, whether I bring the list in or not, the items I buy are usually general items that don't connect in any specific way. I bought them because a thought in my mind told me I could make something with that.
+I began thinking about this application during my time at Dev Bootcamp. Everyone I spoke with stressed this: "find a problem that needs solving then solve it." Well my very annoying problem is going to the grocery store and getting groceries for the week. I will write up a list if I'm feeling like a go-getter, then I'll likely forget the list in the car and decide to improvise in the store. But, whether I bring the list in or not, the items I buy are usually general items that don't connect in any specific way. I bought them because a thought in my mind told me I could make something with them.
 
 Well, the week starts fine because I usually am good enough to think of at least one or two meals I plan on making. After those two meals, though, I'm left with random items that I'll Macgiver together to make some unconventional dish, or those items will sit in my fridge or pantry until they expire.
 
@@ -9,21 +9,3 @@ Well this app is going to solve that problem. If you see a meal, hear about a me
 P.S. This is a pet project meant for my own learning. There is already a pretty functional program, brilliantly named  groceryListGenerator (GLG) in the iOS app store that works pretty well to solve this problem. Use that for now, but be on the lookout for my app to one day tower over that one.
 
 * Ruby version: 2.3.3
-
-* System dependencies:
-  * coffee-rails (~> 4.2)
-  * jbuilder (~> 2.5)
-  * jquery-rails
-  * listen (~> 3.0.5)
-  * pg (~> 0.18)
-  * pry-rails
-  * puma (~> 3.0)
-  * rails (~> 5.0.2)
-  * rspec-rails
-  * sass-rails (~> 5.0)
-  * spring
-  * spring-watcher-listen (~> 2.0.0)
-  * turbolinks (~> 5)
-  * tzinfo-data
-  * uglifier (>= 1.3.0)
-  * web-console (>= 3.3.0)

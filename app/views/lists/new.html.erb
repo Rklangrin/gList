@@ -1,8 +1,8 @@
 <div>
-  <h2 class="new-list">New List</h2>
+  <h2 class="new-list center">New List</h2>
 
-  <div class="new-list">
-    <%= form_for @list, remote: true do |f| %>
+  <div id="list-form">
+    <%= form_for @list do |f| %>
       <p>
         <%= f.hidden_field :user_id, value: current_user.id %>
       </p>
@@ -12,11 +12,7 @@
       </p>
 
       <%= f.submit "Create list" %>
-
-      <!-- ADD SELECT FIELDS TO ADD FUNCTIONALITY TO ADD MEALS TO A LIST -->
     <% end %>
-    
-
   </div>
 
 </div>

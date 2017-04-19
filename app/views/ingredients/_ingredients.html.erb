@@ -1,0 +1,10 @@
+<ul>
+  <% @meal.ingredients_array.each do |ingredient| %>
+    <li><%= ingredient[:name] %></li>
+    <ul>
+      <li>
+        <%= "#{ingredient[:quantity]} #{ingredient[:unit]}" %>
+      </li>
+    </ul>
+  <% end %>
+</ul>

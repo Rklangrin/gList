@@ -11,13 +11,16 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
 
     if @list.save
-      @list_meal = ListMeal.new
-      @meals = Meal.all
       redirect_to edit_list_path(@list)
     else
       @errors = @list.errors.full_messages
       render 'new'
     end
+  end
+
+  def edit
+    @list = List.find_by(id: params[:id])
+    @meals = Meal.all
   end
 
 

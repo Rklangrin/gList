@@ -21,6 +21,7 @@ class IngredientsController < ApplicationController
         end
       else
         @errors = @meal_item.errors.full_messages
+        @new_ingredient.destroy
         render 'new'
       end
     else

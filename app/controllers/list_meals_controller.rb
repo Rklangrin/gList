@@ -1,24 +1,11 @@
 class ListMealsController < ApplicationController
 
-  def create
+  def update
+    @list_meal = ListMeal.find_or_create_by(list_id: params[:list_id], meal_id: params[:id])
     binding.pry
-    @list_meal = ListMeal.new(list_meal_params)
-
-    if @list_meal.save
-      respond_to do |format|
-        format.js {}
-      end
-    else
-      @errors = @list_meal.errors.full_messages
-      respond_to do |format|
-        format.js {}
-      end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js {}
     end
-  end
-
-  private
-
-  def list_meal_params
-    params.require(:list_meal).permit(:meal_id, :list_id)
   end
 end

@@ -8,6 +8,16 @@ class List < ApplicationRecord
 
   validates_presence_of :name
 
+  def contains_meal?(meal)
+    contains_meal = false
+    self.meals.each do |list_meal|
+      if list_meal.id == meal.id 
+        contains_meal = true
+      end
+    end
+    contains_meal
+  end
+
   # def generate
   #   uniq_ingred = self.get_unique_ingredients
   #   quantities_hash = self.get_quantities

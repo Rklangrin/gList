@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170331144011) do
     t.integer  "ingredient_id", null: false
     t.integer  "meal_id",       null: false
     t.integer  "quantity",      null: false
+    t.string   "instruction"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

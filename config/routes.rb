@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   end
   # post '/ingredients', to: 'meals#create_new_ingredients', as: :ingredients
   resources :lists, only: [:new, :edit, :create, :show, :update]
+
+  put "/lists/:list_id/meals/:id", to: 'list_meals#update'
+
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:create]
-  resources :list_meals, only: [:create]
   get '/login', to: 'sessions#new', as: :login
   get '/logout', to: 'sessions#destroy', as: :logout
 

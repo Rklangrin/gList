@@ -8,7 +8,7 @@
           <span class="card-title"><%= meal.name %></span>
 
           <% if !@list.contains_meal?(meal) %>
-            <a class="btn-floating halfway-fab waves-effect waves-light red <%= meal.id %>" href="/lists/<%= @list.id %>/meals/<%= meal.id %>" data-method="put" data-remote="true"><i class="material-icons">add</i></a>
+            <a class="btn-floating halfway-fab waves-effect waves-light red <%= meal.id %>" href="/lists/<%= @list.id %>/meals/<%= meal.id %>" data-method="post" data-remote="true"><i class="material-icons">add</i></a>
           <% end %>
           
             <ul>

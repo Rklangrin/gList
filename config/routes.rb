@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # post '/ingredients', to: 'meals#create_new_ingredients', as: :ingredients
   resources :lists, only: [:new, :edit, :create, :show, :update]
 
-  put "/lists/:list_id/meals/:id", to: 'list_meals#update'
+  post "/lists/:list_id/meals/:id", to: 'list_meals#create'
 
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:create]

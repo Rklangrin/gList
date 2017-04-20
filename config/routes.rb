@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :ingredients, only: [:new, :create]
   end
   # post '/ingredients', to: 'meals#create_new_ingredients', as: :ingredients
-  resources :lists, only: [:new, :edit, :create, :show, :update]
+  resources :lists, only: [:new, :edit, :create, :show, :update] do
+    resources :meals, only: [:update]
+  end
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:create]
   get '/login', to: 'sessions#new', as: :login

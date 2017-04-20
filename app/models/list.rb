@@ -9,14 +9,13 @@ class List < ApplicationRecord
   validates_presence_of :name
 
   def contains_meal?(meal)
-    contains = false
-    self.list_meals.each do |list_meal|
-      if list_meal.meal_id = meal.id 
-        contains = true
-        break
+    contains_meal = false
+    self.meals.each do |list_meal|
+      if list_meal.id == meal.id 
+        contains_meal = true
       end
     end
-    contains
+    contains_meal
   end
 
   # def generate

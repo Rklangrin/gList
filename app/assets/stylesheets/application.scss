@@ -22,12 +22,7 @@ $secondary-color: color("green", "lighten-2") !default;
   padding-left: 20px;
 }
 
-#meal-form {
-  margin: 0 auto;
-  max-width: 50%;
-}
-
-#ingredient-form {
+#meal-form, #ingredient-form, #list-form {
   margin: 0 auto;
   max-width: 50%;
 }

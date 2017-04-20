@@ -11,18 +11,22 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
 
     if @list.save
-      @list_meal = ListMeal.new
-      @meals = Meal.all
-      respond_to do |format|
-        format.js {}
-      end
+      redirect_to edit_list_path(@list)
     else
       @errors = @list.errors.full_messages
-      respond_to do |format|
-        format.js {}
-      end
+      render 'new'
     end
   end
+
+  def edit
+    @list = List.find_by(id: params[:id])
+    @meals = Meal.all
+  end
+
+  def update
+    binding.pry
+  end
+
 
   private
 

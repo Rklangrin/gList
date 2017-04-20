@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # post '/ingredients', to: 'meals#create_new_ingredients', as: :ingredients
   resources :lists, only: [:new, :edit, :create, :show, :update]
 
-  put "/lists/:list_id/meals/:id", to: 'list_meals#update'
+  post "/lists/:list_id/meals/:id", to: 'list_meals#create'
+  # I created this custom route in order to have access to the list and meal ids from the list_meals#create method so that I can properly create list_meal objects to save to the database that accurately match up the proper lists and meals. 
 
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:create]

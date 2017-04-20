@@ -23,6 +23,10 @@ class ListsController < ApplicationController
     @meals = Meal.all
   end
 
+  def update
+    binding.pry
+  end
+
 
   private
 

@@ -19,6 +19,7 @@
               <li> <%= link_to "Sign Up!", new_user_path %> </li>
             <% else %>
               <li> <%= link_to "Home", root_path %> </li>
+              <li> <%= link_to "My Lists", user_path(current_user.id) %></li>
               <li> <%= link_to "Logout", logout_path %> </li>
             <% end %>
           </ul>

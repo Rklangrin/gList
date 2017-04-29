@@ -16,6 +16,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    if @user = helpers.current_user
+      @lists = @user.lists
+    else
+      redirect_to root_path
+    end
+  end
+
   private
 
   def user_params

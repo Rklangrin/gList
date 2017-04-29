@@ -17,8 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user
-      @user = current_user
+    if @user = helpers.current_user
       @lists = @user.lists
     else
       redirect_to root_path

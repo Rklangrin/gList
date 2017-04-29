@@ -7,6 +7,8 @@ end
 
 ruby '2.3.3'
 
+gem 'awesome_print'
+
 gem 'materialize-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'

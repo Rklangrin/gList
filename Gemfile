@@ -8,6 +8,7 @@ end
 ruby '2.3.3'
 
 gem 'awesome_print'
+# Type 'ap object' in order to print out the object to console in easy-to-read format
 
 gem 'materialize-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

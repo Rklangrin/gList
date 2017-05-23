@@ -7,9 +7,9 @@
         <div class="card-content white-text">
           <span class="card-title"><%= meal.name %></span>
 
-          <% if !@list.contains_meal?(meal) %>
-            <a class="btn-floating halfway-fab waves-effect waves-light red <%= meal.id %>" href="/lists/<%= @list.id %>/meals/<%= meal.id %>" data-method="post" data-remote="true"><i class="material-icons">add</i></a>
-          <% end %>
+          <span class="btn-floating center waves-effect waves-light blue <%= meal.id %>" href="/lists/<%= @list.id %>/meals/<%= meal.id %>" data-method="post" data-remote="true"> <%= @list.meals.where(id: meal.id).count  %></span>
+
+          <a class="btn-floating halfway-fab waves-effect waves-light red <%= meal.id %>" href="/lists/<%= @list.id %>/meals/<%= meal.id %>" data-method="post" data-remote="true"><i class="material-icons">add</i></a>
           
             <ul>
               <% meal.ingredients_array.each do |ingredient| %>

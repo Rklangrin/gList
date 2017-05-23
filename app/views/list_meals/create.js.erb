@@ -1,1 +1,2 @@
-$("a.<%= @list_meal[:meal_id] %>").remove()
+
+$("span.<%= @list_meal[:meal_id] %>").html(<%= @list.meals.where(id: @list_meal[:meal_id]).count  %>)

@@ -1,5 +1,7 @@
 <h2>My Lists</h2>
 
 <% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
+  <div>
+    <%= link_to list.name, list_path(list) %>
+  </div>
 <% end %>

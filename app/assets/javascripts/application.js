@@ -15,3 +15,14 @@
 //= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+
+  console.log("hello");
+
+  $("body").click(function(event) {
+    console.log(event.target);
+  })
+
+})

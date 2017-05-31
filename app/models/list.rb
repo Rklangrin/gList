@@ -18,6 +18,34 @@ class List < ApplicationRecord
     contains_meal
   end
 
+  def compiled_list
+    list_hash = {}
+    meal_items = self.meal_items
+
+    meal_items.each do |meal_item|
+      id = meal_item.ingredient_id.to_s
+      qty = meal_item.quantity
+      if (list_hash[id])
+        list_hash[id] += qty
+      else
+        list_hash[id] = qty
+      end
+    end
+    list_hash
+  end
+
+  def formatted_list
+    list = compiled_list
+    formatted_list = []
+
+    list.each do |ingred_id, quantity|
+      ingredient = Ingredient.find(ingred_id)
+      formatted_list.push("#{ingredient.name}: #{quantity} #{ingredient.unit_type}")
+    end
+
+    formatted_list
+  end
+
   # def generate
   #   uniq_ingred = self.get_unique_ingredients
   #   quantities_hash = self.get_quantities
@@ -42,14 +70,14 @@ class List < ApplicationRecord
   #   quantities_hash
   # end
 
-  # def get_unique_ingredients
-  #   unique_ingredients = []
-  #   self.meals.each do |meal|
-  #     meal.ingredients.each do |ingredient|
-  #       unique_ingredients << ingredient
-  #     end
-  #   end
-  #   unique_ingredients = unique_ingredients.uniq
+  def get_unique_ingredients
+    unique_ingredients = []
+    self.meals.each do |meal|
+      meal.ingredients.each do |ingredient|
+        unique_ingredients << ingredient
+      end
+    end
+    unique_ingredients = unique_ingredients.uniq
 
-  # end
+  end
 end

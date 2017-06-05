@@ -1,2 +1,2 @@
-
-$("span.<%= @list_meal[:meal_id] %>").html(<%= @list.meals.where(id: @list_meal[:meal_id]).count  %>)
+<% binding.pry %>
+$("span.<%= @list_meal[:meal_id] %>").html(<%= @list.number_of(@list_meal[:meal_id]) %>)

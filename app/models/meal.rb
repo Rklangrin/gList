@@ -14,3 +14,4 @@ class Meal < ApplicationRecord
   end
 
 end
+ 

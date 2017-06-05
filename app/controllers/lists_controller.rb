@@ -19,8 +19,9 @@ class ListsController < ApplicationController
   end
 
   def edit
-    @list = List.find_by(id: params[:id])
-    @meals = Meal.all
+    list_array = List.where(id: params[:id]).includes(:meals)
+    @list = list_array[0]
+    @meals = Meal.includes(:meal_items).includes(:ingredients)
   end
 
   def update

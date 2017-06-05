@@ -7,7 +7,7 @@
         <div class="card-content white-text">
           <span class="card-title"><%= meal.name %></span>
 
-          <span class="btn-floating center waves-effect waves-light blue <%= meal.id %>" href="/lists/<%= @list.id %>/meals/<%= meal.id %>" data-method="post" data-remote="true"> <%= @list.number_of(meal)  %></span>
+          <span class="btn-floating center waves-effect waves-light blue <%= meal.id %>" href="/lists/<%= @list.id %>/meals/<%= meal.id %>" data-method="post" data-remote="true"> <%= @list.number_of(meal.id)  %></span>
 
           <a class="btn-floating halfway-fab waves-effect waves-light red <%= meal.id %>" href="/lists/<%= @list.id %>/meals/<%= meal.id %>" data-method="post" data-remote="true"><i class="material-icons">add</i></a>
           

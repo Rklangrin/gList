@@ -18,6 +18,18 @@ class List < ApplicationRecord
     contains_meal
   end
 
+  def number_of(meal)
+    list_meals = self.list_meals
+    number_of_meals_in_list = 0
+    list_meals.each do |lm|
+      if lm.meal_id == meal.id 
+        number_of_meals_in_list += 1
+      end
+    end
+
+    number_of_meals_in_list
+  end
+
   def format_list
     list = compile_list
     formatted_list = []
